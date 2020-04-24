@@ -18,7 +18,7 @@ namespace StariApp
             InitializeComponent();
         }
 
-        private int id;
+        private string ids;
         private string position;
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace StariApp
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             TextBox temp = (TextBox)sender;
-            id = int.Parse(temp.Text);
+            ids = temp.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace StariApp
 
         private void button2_Click(object sender, EventArgs e)
         { 
-            Connection.removeById(id, "Position");
+            Connection.removeByIdMultiple(ids, "Position");
             DisplayData();
 
         }

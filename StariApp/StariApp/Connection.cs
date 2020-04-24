@@ -13,11 +13,11 @@ namespace StariApp
 
         public static void addWorker(string name, string lastName, string position)
         {
-            
+
             int count = workerCount(name, lastName);
 
             //if a worker doesnt exist
-            if(count == 0)
+            if (count == 0)
             {
                 int id = Count("Workers"); ++id;
 
@@ -44,7 +44,7 @@ namespace StariApp
                 insert.ExecuteNonQuery();
                 connection2.Close();
             }
-            
+
         }
 
         public static void removeWorker(string name, string lastName)
@@ -52,7 +52,7 @@ namespace StariApp
 
             int count = workerCount(name, lastName);
 
-            if(count != 0)
+            if (count != 0)
             {
                 SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Projects\\StariApp\\StariApp\\StariApp\\StariAppDB.mdf;Integrated Security=True");
                 connection.Open();
@@ -112,7 +112,7 @@ namespace StariApp
                     new SqlParameter("@id", SqlDbType.Int) {Value = id},
                     new SqlParameter("@name", SqlDbType.VarChar) {Value = name},
                     new SqlParameter("@price", SqlDbType.Float) {Value = price},
-                    new SqlParameter("@mass", SqlDbType.Float) {Value = mass},                    
+                    new SqlParameter("@mass", SqlDbType.Float) {Value = mass},
                     new SqlParameter("@metric", SqlDbType.VarChar) {Value = metric},
                 };
 
@@ -175,7 +175,7 @@ namespace StariApp
         {
             int workerId = getWorkerId(name, lastName);
             int id = Count("Note"); ++id;
-            
+
             SqlConnection connection2 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Projects\\StariApp\\StariApp\\StariApp\\StariAppDB.mdf;Integrated Security=True");
             connection2.Open();
 
@@ -220,7 +220,7 @@ namespace StariApp
             int count = (int)command.ExecuteScalar();
             if (count == 0)
             {
-                connection.Close();         
+                connection.Close();
                 return count;
             }
             else
@@ -230,7 +230,7 @@ namespace StariApp
                 return count;
             }
 
-            
+
         }
 
         public static void addPosition(string position)
@@ -248,8 +248,8 @@ namespace StariApp
             int count = (int)command.ExecuteScalar();
             connection.Close();
 
-            
-            if(count == 0)
+
+            if (count == 0)
             {
                 int id = Count("Position"); ++id;
 
@@ -290,6 +290,30 @@ namespace StariApp
 
         }
 
+        public static void removeByIdMultiple(string ids, string table)
+        {
+            SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Projects\\StariApp\\StariApp\\StariApp\\StariAppDB.mdf;Integrated Security=True");
+            connection.Open();
+
+            foreach (string s in ids.Split())
+            {
+                if(s != "")
+                {
+                    SqlCommand delete = new SqlCommand("delete from " + table + "  where Id = @id", connection);
+    
+                    List<SqlParameter> para = new List<SqlParameter>()
+                    {
+                        new SqlParameter("@id", SqlDbType.Int) {Value = int.Parse(s)},
+                    };
+
+                    delete.Parameters.AddRange(para.ToArray());
+                    delete.ExecuteNonQuery();
+                }
+                
+            }
+            connection.Close();
+        }
+
         public static void addStock(DateTime date, string resource, float amount)
         {
             int id = Count("Stock"); ++id;
@@ -319,6 +343,35 @@ namespace StariApp
             insert.Parameters.AddRange(para1.ToArray());
             insert.ExecuteNonQuery();
             connection1.Close();
+
+        }
+
+        public static void addWork(DateTime date, string ids, float duration)
+        {
+            
+
+            SqlConnection connection2 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Projects\\StariApp\\StariApp\\StariApp\\StariAppDB.mdf;Integrated Security=True");
+            connection2.Open();
+
+            foreach(string s in ids.Split())
+            {
+                int id = Count("Work"); ++id;
+                SqlCommand insert = new SqlCommand("INSERT INTO Work (Id, Duration, Date, Worker)  VALUES(@id, @duration, @date, @workerId)", connection2);
+
+                List<SqlParameter> para1 = new List<SqlParameter>()
+                {
+                new SqlParameter("@date", SqlDbType.Date) {Value = date.Date},
+                new SqlParameter("@duration", SqlDbType.Float) {Value = duration},
+                new SqlParameter("@workerId", SqlDbType.Int) {Value = int.Parse(s)},
+                new SqlParameter("@id", SqlDbType.Int) {Value = id},
+                };
+
+                insert.Parameters.AddRange(para1.ToArray());
+                insert.ExecuteNonQuery();
+
+            }
+            
+            connection2.Close();
 
         }
     }

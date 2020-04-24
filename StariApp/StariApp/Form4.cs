@@ -24,7 +24,7 @@ namespace StariApp
         private string firstName;
         private string lastName;
         private string name;
-        private int id;
+        private string ids;
 
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace StariApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Connection.removeById(id, "Note");
+            Connection.removeByIdMultiple(ids, "Note");
             MessageBox.Show("Izbrisana je napomena za radnika" + name);
             DisplayData();
         }
@@ -86,7 +86,7 @@ namespace StariApp
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
             TextBox temp = (TextBox)sender;
-            id = int.Parse(temp.Text);
+            ids = temp.Text;
         }
     }
 }

@@ -20,9 +20,9 @@ namespace StariApp
 
         private string dateS;
         private string resourceName;
-        private float amount;
+        private string amount;
         private DateTime date;
-        private int id;
+        private string ids;
 
         private void Form7_Load(object sender, EventArgs e)
         {
@@ -35,13 +35,12 @@ namespace StariApp
         {
             TextBox temp = (TextBox)sender;
             dateS = temp.Text;
-
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             TextBox temp = (TextBox)sender;
-            amount = float.Parse(temp.Text);
+            amount = temp.Text;
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -53,7 +52,7 @@ namespace StariApp
         private void button1_Click(object sender, EventArgs e)
         {
             date = Convert.ToDateTime(dateS);
-            Connection.addStock(date, resourceName, amount);
+            Connection.addStock(date, resourceName, float.Parse(amount));
             DisplayDataStock();
         }
 
@@ -70,12 +69,12 @@ namespace StariApp
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
             TextBox temp = (TextBox)sender;
-            id = int.Parse(temp.Text);
+            ids = temp.Text;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Connection.removeById(id, "Stock");
+            Connection.removeByIdMultiple(ids, "Stock");
             DisplayDataStock();
         }
 
