@@ -198,7 +198,7 @@ namespace StariApp
         {
             SqlConnection connection1 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Projects\\StariApp\\StariApp\\StariApp\\StariAppDB.mdf;Integrated Security=True");
             connection1.Open();
-            SqlCommand temp = new SqlCommand("select WorkerID from Workers where lower(Name) = lower(@name) and lower(LastName) = lower(@lastName)", connection1);
+            SqlCommand temp = new SqlCommand("select Id from Workers where lower(Name) = lower(@name) and lower(LastName) = lower(@lastName)", connection1);
             List<SqlParameter> para = new List<SqlParameter>()
                 {
                     new SqlParameter("@name", SqlDbType.VarChar) {Value = name},
@@ -287,6 +287,38 @@ namespace StariApp
             delete.Parameters.AddRange(para.ToArray());
             delete.ExecuteNonQuery();
             connection.Close();
+
+        }
+
+        public static void addStock(DateTime date, string resource, float amount)
+        {
+            int id = Count("Stock"); ++id;
+
+            SqlConnection connection1 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Projects\\StariApp\\StariApp\\StariApp\\StariAppDB.mdf;Integrated Security=True");
+            connection1.Open();
+
+            SqlCommand temp = new SqlCommand("select Id from Resource where lower(Name) = lower(@name)", connection1);
+            List<SqlParameter> para = new List<SqlParameter>()
+                {
+                    new SqlParameter("@name", SqlDbType.VarChar) {Value = resource},
+                };
+
+            temp.Parameters.AddRange(para.ToArray());
+            int resourceId = (int)temp.ExecuteScalar();
+
+            SqlCommand insert = new SqlCommand("INSERT INTO Stock (Resource, Amount, Date, Id)  VALUES( @resource, @amount, @date, @id)", connection1);
+
+            List<SqlParameter> para1 = new List<SqlParameter>()
+            {
+                new SqlParameter("@date", SqlDbType.Date) {Value = date.Date},
+                new SqlParameter("@resource", SqlDbType.Int) {Value = resourceId},
+                new SqlParameter("@amount", SqlDbType.Float) {Value = amount},
+                new SqlParameter("@id", SqlDbType.Int) {Value = id},
+            };
+
+            insert.Parameters.AddRange(para1.ToArray());
+            insert.ExecuteNonQuery();
+            connection1.Close();
 
         }
     }
