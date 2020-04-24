@@ -225,9 +225,10 @@ namespace StariApp
             }
             else
             {
-                SqlCommand command2 = new SqlCommand("select Max(Id) from " + table, connection);
-                count = (int)command.ExecuteScalar();
-                return count;
+                int max;
+                SqlCommand command2 = new SqlCommand("select max(Id) from " + table, connection);
+                max = (int)command2.ExecuteScalar();
+                return max;
             }
 
 
