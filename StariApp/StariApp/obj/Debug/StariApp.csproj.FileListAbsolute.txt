@@ -9,3 +9,8 @@ E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.exe
 E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.pdb
 E:\Projects\StariApp\StariApp\StariApp\bin\Debug\StariAppDB.mdf
 E:\Projects\StariApp\StariApp\StariApp\bin\Debug\StariAppDB_log.ldf
+E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.Form2.resources
+E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.Form3.resources
+E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.Form4.resources
+E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.Form5.resources
+E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.Form6.resources

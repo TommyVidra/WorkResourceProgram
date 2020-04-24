@@ -62,11 +62,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connection.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form5.Designer.cs">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form6.Designer.cs">
+      <DependentUpon>Form6.cs</DependentUpon>
     </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
@@ -76,8 +107,53 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StariAppDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="StariAppDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StariAppDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StariAppDBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StariAppDBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StariAppDBDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StariAppDBDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StariAppDBDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StariAppDBDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StariAppDBDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StariAppDBDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StariAppDBDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StariAppDBDataSet6.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form5.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form6.resx">
+      <DependentUpon>Form6.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -107,6 +183,72 @@
     </None>
     <None Include="StariAppDBDataSet.xss">
       <DependentUpon>StariAppDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StariAppDBDataSet1.xsc">
+      <DependentUpon>StariAppDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="StariAppDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StariAppDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StariAppDBDataSet1.xss">
+      <DependentUpon>StariAppDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="StariAppDBDataSet2.xsc">
+      <DependentUpon>StariAppDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="StariAppDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StariAppDBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StariAppDBDataSet2.xss">
+      <DependentUpon>StariAppDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="StariAppDBDataSet3.xsc">
+      <DependentUpon>StariAppDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="StariAppDBDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StariAppDBDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StariAppDBDataSet3.xss">
+      <DependentUpon>StariAppDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="StariAppDBDataSet4.xsc">
+      <DependentUpon>StariAppDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="StariAppDBDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StariAppDBDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StariAppDBDataSet4.xss">
+      <DependentUpon>StariAppDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="StariAppDBDataSet5.xsc">
+      <DependentUpon>StariAppDBDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="StariAppDBDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StariAppDBDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StariAppDBDataSet5.xss">
+      <DependentUpon>StariAppDBDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="StariAppDBDataSet6.xsc">
+      <DependentUpon>StariAppDBDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="StariAppDBDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StariAppDBDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StariAppDBDataSet6.xss">
+      <DependentUpon>StariAppDBDataSet6.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

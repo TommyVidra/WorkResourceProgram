@@ -12,32 +12,51 @@ namespace StariApp
 {
     public partial class form1 : Form
     {
+        
         public form1()
         {
             InitializeComponent();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
+            // TODO: This line of code loads data into the 'stariAppDBDataSet6.EventsView' table. You can move, or remove it, as needed.
+            //this.eventsViewTableAdapter.Fill(this.stariAppDBDataSet6.EventsView);
 
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            Form4 form4 = new Form4();
+            form4.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Form5 form5 = new Form5();
+            form5.Show();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
         {
 
         }
