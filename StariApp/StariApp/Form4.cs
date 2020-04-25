@@ -88,5 +88,10 @@ namespace StariApp
             TextBox temp = (TextBox)sender;
             ids = temp.Text;
         }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
