@@ -21,9 +21,7 @@ namespace StariApp
         private string note;
         private string dateS;
         private DateTime date;
-        private string firstName;
-        private string lastName;
-        private string name;
+        private string id;
         private string ids;
 
 
@@ -42,23 +40,19 @@ namespace StariApp
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
             TextBox temp = (TextBox)sender;
-            name = temp.Text;
+            id = temp.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             date = Convert.ToDateTime(dateS);
-            firstName = name.Split()[0];
-            lastName = name.Split()[1];
-            Connection.addNote(note, date, firstName, lastName);
-            MessageBox.Show("Zabilježena je napomena za radnika" + name);
+            Connection.addNote(note, date, int.Parse(id));
             DisplayData();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Connection.removeByIdMultiple(ids, "Note");
-            MessageBox.Show("Izbrisana je napomena za radnika" + name);
             DisplayData();
         }
 

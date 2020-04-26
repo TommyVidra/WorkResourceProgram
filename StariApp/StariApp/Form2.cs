@@ -24,11 +24,9 @@ namespace StariApp
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'stariAppDBDataSet2.WorkerView' table. You can move, or remove it, as needed.
-            this.workerViewTableAdapter.Fill(this.stariAppDBDataSet2.WorkerView);
-            // TODO: This line of code loads data into the 'stariAppDBDataSet1.Workers' table. You can move, or remove it, as needed.
-            //this.workerViewTableAdapter.Fill(this.stariAppDBDataSet2.WorkerView);
-
+            // TODO: This line of code loads data into the 'stariAppDBDataSet12.WorkerView' table. You can move, or remove it, as needed.
+            this.workerViewTableAdapter.Fill(this.stariAppDBDataSet12.WorkerView);
+           
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -51,8 +49,7 @@ namespace StariApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Connection.autoIncrement("Workers");
-            Connection.addWorker(name, lastName, position);
+            Connection.addWorker(name, lastName, int.Parse(position));
             MessageBox.Show("Zaposlenik uspješno unesen");
             DisplayData();
         }
@@ -61,7 +58,6 @@ namespace StariApp
         {
             Connection.removeWorker(name, lastName);
             MessageBox.Show("Zaposlenik uspješno izbrisan");
-            //Connection.autoIncrement("Workers");
             DisplayData();
         }
 

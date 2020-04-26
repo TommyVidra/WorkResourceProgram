@@ -38,17 +38,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.stariAppDBDataSet12 = new StariApp.StariAppDBDataSet12();
+            this.workerViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.workerViewTableAdapter = new StariApp.StariAppDBDataSet12TableAdapters.WorkerViewTableAdapter();
             this.imeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prezimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pozicijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.workerViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stariAppDBDataSet2 = new StariApp.StariAppDBDataSet2();
-            this.workerViewTableAdapter = new StariApp.StariAppDBDataSet2TableAdapters.WorkerViewTableAdapter();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workerViewBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stariAppDBDataSet2)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stariAppDBDataSet12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workerViewBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -104,9 +105,9 @@
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label3.Location = new System.Drawing.Point(14, 118);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 16);
+            this.label3.Size = new System.Drawing.Size(61, 16);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Pozicija";
+            this.label3.Text = "Id Pozicije";
             // 
             // button1
             // 
@@ -148,13 +149,45 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.imeDataGridViewTextBoxColumn,
             this.prezimeDataGridViewTextBoxColumn,
-            this.pozicijaDataGridViewTextBoxColumn});
+            this.pozicijaDataGridViewTextBoxColumn,
+            this.idDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.workerViewBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(331, 24);
+            this.dataGridView1.Location = new System.Drawing.Point(266, 17);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.dataGridView1.Size = new System.Drawing.Size(346, 233);
+            this.dataGridView1.Size = new System.Drawing.Size(446, 358);
             this.dataGridView1.TabIndex = 8;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(247, 417);
+            this.panel1.TabIndex = 9;
+            // 
+            // stariAppDBDataSet12
+            // 
+            this.stariAppDBDataSet12.DataSetName = "StariAppDBDataSet12";
+            this.stariAppDBDataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // workerViewBindingSource
+            // 
+            this.workerViewBindingSource.DataMember = "WorkerView";
+            this.workerViewBindingSource.DataSource = this.stariAppDBDataSet12;
+            // 
+            // workerViewTableAdapter
+            // 
+            this.workerViewTableAdapter.ClearBeforeFill = true;
             // 
             // imeDataGridViewTextBoxColumn
             // 
@@ -174,53 +207,28 @@
             this.pozicijaDataGridViewTextBoxColumn.HeaderText = "Pozicija";
             this.pozicijaDataGridViewTextBoxColumn.Name = "pozicijaDataGridViewTextBoxColumn";
             // 
-            // workerViewBindingSource
+            // idDataGridViewTextBoxColumn
             // 
-            this.workerViewBindingSource.DataMember = "WorkerView";
-            this.workerViewBindingSource.DataSource = this.stariAppDBDataSet2;
-            // 
-            // stariAppDBDataSet2
-            // 
-            this.stariAppDBDataSet2.DataSetName = "StariAppDBDataSet2";
-            this.stariAppDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // workerViewTableAdapter
-            // 
-            this.workerViewTableAdapter.ClearBeforeFill = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Teal;
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(247, 414);
-            this.panel1.TabIndex = 9;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(240)))), ((int)(((byte)(247)))));
-            this.ClientSize = new System.Drawing.Size(711, 414);
+            this.ClientSize = new System.Drawing.Size(724, 417);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form2";
             this.Text = "Zaposlenik";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workerViewBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stariAppDBDataSet2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stariAppDBDataSet12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workerViewBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -236,12 +244,13 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private StariAppDBDataSet2 stariAppDBDataSet2;
+        private System.Windows.Forms.Panel panel1;
+        private StariAppDBDataSet12 stariAppDBDataSet12;
         private System.Windows.Forms.BindingSource workerViewBindingSource;
-        private StariAppDBDataSet2TableAdapters.WorkerViewTableAdapter workerViewTableAdapter;
+        private StariAppDBDataSet12TableAdapters.WorkerViewTableAdapter workerViewTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn imeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prezimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pozicijaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
     }
 }

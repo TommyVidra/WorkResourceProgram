@@ -100,9 +100,10 @@
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label3.Location = new System.Drawing.Point(22, 122);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 14);
+            this.label3.Size = new System.Drawing.Size(60, 14);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Ime Resursa";
+            this.label3.Text = "Id Resursa";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // button1
             // 

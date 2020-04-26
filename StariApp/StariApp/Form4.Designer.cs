@@ -109,9 +109,9 @@
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label3.Location = new System.Drawing.Point(18, 195);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 16);
+            this.label3.Size = new System.Drawing.Size(125, 16);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Radnik(Ime i Prezime)";
+            this.label3.Text = "Id Radnika Napomene";
             // 
             // dataGridView1
             // 

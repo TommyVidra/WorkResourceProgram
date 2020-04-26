@@ -52,7 +52,7 @@ namespace StariApp
         private void button1_Click(object sender, EventArgs e)
         {
             date = Convert.ToDateTime(dateS);
-            Connection.addStock(date, resourceName, float.Parse(amount));
+            Connection.addStock(date, int.Parse(resourceName), float.Parse(amount));
             DisplayDataStock();
         }
 
@@ -119,6 +119,9 @@ namespace StariApp
             con.Close();
         }
 
-      
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

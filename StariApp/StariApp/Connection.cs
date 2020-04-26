@@ -11,7 +11,7 @@ namespace StariApp
     class Connection
     {
 
-        public static void addWorker(string name, string lastName, string position)
+        public static void addWorker(string name, string lastName, int position)
         {
 
             int count = workerCount(name, lastName);
@@ -21,12 +21,12 @@ namespace StariApp
             {
                 int id = Count("Workers"); ++id;
 
-                SqlConnection connection1 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Projects\\StariApp\\StariApp\\StariApp\\StariAppDB.mdf;Integrated Security=True");
-                connection1.Open();
-                SqlCommand temp = new SqlCommand("select Position.Id from Position where lower(Position) = lower(@position)", connection1);
-                temp.Parameters.AddWithValue("@position", position);
-                int positionID = (int)temp.ExecuteScalar();
-                connection1.Close();
+                //SqlConnection connection1 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Projects\\StariApp\\StariApp\\StariApp\\StariAppDB.mdf;Integrated Security=True");
+                //connection1.Open();
+                //SqlCommand temp = new SqlCommand("select Position.Id from Position where lower(Position) = lower(@position)", connection1);
+                //temp.Parameters.AddWithValue("@position", position);
+                //int positionID = (int)temp.ExecuteScalar();
+                //connection1.Close();
 
                 SqlConnection connection2 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Projects\\StariApp\\StariApp\\StariApp\\StariAppDB.mdf;Integrated Security=True");
                 connection2.Open();
@@ -37,7 +37,7 @@ namespace StariApp
                     new SqlParameter("@id", SqlDbType.Int) {Value = id},
                     new SqlParameter("@name", SqlDbType.VarChar) {Value = name},
                     new SqlParameter("@lastName", SqlDbType.VarChar) {Value = lastName},
-                    new SqlParameter("@position", SqlDbType.Int) {Value = positionID},
+                    new SqlParameter("@position", SqlDbType.Int) {Value = position},
                 };
 
                 insert.Parameters.AddRange(para1.ToArray());
@@ -171,9 +171,9 @@ namespace StariApp
             return count;
         }
 
-        public static void addNote(string note, DateTime date, string name, string lastName)
+        public static void addNote(string note, DateTime date, int workerId)
         {
-            int workerId = getWorkerId(name, lastName);
+            //int workerId = getWorkerId(name, lastName);
             int id = Count("Note"); ++id;
 
             SqlConnection connection2 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Projects\\StariApp\\StariApp\\StariApp\\StariAppDB.mdf;Integrated Security=True");
@@ -315,28 +315,28 @@ namespace StariApp
             connection.Close();
         }
 
-        public static void addStock(DateTime date, string resource, float amount)
+        public static void addStock(DateTime date, int resource, float amount)
         {
             int id = Count("Stock"); ++id;
 
             SqlConnection connection1 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Projects\\StariApp\\StariApp\\StariApp\\StariAppDB.mdf;Integrated Security=True");
             connection1.Open();
 
-            SqlCommand temp = new SqlCommand("select Id from Resource where lower(Name) = lower(@name)", connection1);
-            List<SqlParameter> para = new List<SqlParameter>()
-                {
-                    new SqlParameter("@name", SqlDbType.VarChar) {Value = resource},
-                };
+            //SqlCommand temp = new SqlCommand("select Id from Resource where lower(Name) = lower(@name)", connection1);
+            //List<SqlParameter> para = new List<SqlParameter>()
+            //    {
+            //        new SqlParameter("@name", SqlDbType.VarChar) {Value = resource},
+            //    };
 
-            temp.Parameters.AddRange(para.ToArray());
-            int resourceId = (int)temp.ExecuteScalar();
+            //temp.Parameters.AddRange(para.ToArray());
+            //int resourceId = (int)temp.ExecuteScalar();
 
             SqlCommand insert = new SqlCommand("INSERT INTO Stock (Resource, Amount, Date, Id)  VALUES( @resource, @amount, @date, @id)", connection1);
 
             List<SqlParameter> para1 = new List<SqlParameter>()
             {
                 new SqlParameter("@date", SqlDbType.Date) {Value = date.Date},
-                new SqlParameter("@resource", SqlDbType.Int) {Value = resourceId},
+                new SqlParameter("@resource", SqlDbType.Int) {Value = resource},
                 new SqlParameter("@amount", SqlDbType.Float) {Value = amount},
                 new SqlParameter("@id", SqlDbType.Int) {Value = id},
             };
