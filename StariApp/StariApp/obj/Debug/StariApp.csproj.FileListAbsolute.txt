@@ -1,7 +1,6 @@
 E:\Projects\StariApp\StariApp\StariApp\bin\Debug\StariApp.exe.config
 E:\Projects\StariApp\StariApp\StariApp\bin\Debug\StariApp.exe
 E:\Projects\StariApp\StariApp\StariApp\bin\Debug\StariApp.pdb
-E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.csprojAssemblyReference.cache
 E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.form1.resources
 E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.Properties.Resources.resources
 E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.csproj.GenerateResource.cache

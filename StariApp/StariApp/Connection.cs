@@ -21,13 +21,6 @@ namespace StariApp
             {
                 int id = Count("Workers"); ++id;
 
-                //SqlConnection connection1 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Projects\\StariApp\\StariApp\\StariApp\\StariAppDB.mdf;Integrated Security=True");
-                //connection1.Open();
-                //SqlCommand temp = new SqlCommand("select Position.Id from Position where lower(Position) = lower(@position)", connection1);
-                //temp.Parameters.AddWithValue("@position", position);
-                //int positionID = (int)temp.ExecuteScalar();
-                //connection1.Close();
-
                 SqlConnection connection2 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Projects\\StariApp\\StariApp\\StariApp\\StariAppDB.mdf;Integrated Security=True");
                 connection2.Open();
                 SqlCommand insert = new SqlCommand("INSERT INTO Workers (Id, Name, LastName, Position)  VALUES(@id, @name, @lastName, @position)", connection2);
@@ -194,22 +187,22 @@ namespace StariApp
             connection2.Close();
         }
 
-        private static int getWorkerId(string name, string lastName)
-        {
-            SqlConnection connection1 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Projects\\StariApp\\StariApp\\StariApp\\StariAppDB.mdf;Integrated Security=True");
-            connection1.Open();
-            SqlCommand temp = new SqlCommand("select Id from Workers where lower(Name) = lower(@name) and lower(LastName) = lower(@lastName)", connection1);
-            List<SqlParameter> para = new List<SqlParameter>()
-                {
-                    new SqlParameter("@name", SqlDbType.VarChar) {Value = name},
-                    new SqlParameter("@lastName", SqlDbType.VarChar) {Value = lastName},
-                };
-            temp.Parameters.AddRange(para.ToArray());
-            int WorkerID = (int)temp.ExecuteScalar();
-            connection1.Close();
+        //private static int getWorkerId(string name, string lastName)
+        //{
+        //    SqlConnection connection1 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Projects\\StariApp\\StariApp\\StariApp\\StariAppDB.mdf;Integrated Security=True");
+        //    connection1.Open();
+        //    SqlCommand temp = new SqlCommand("select Id from Workers where lower(Name) = lower(@name) and lower(LastName) = lower(@lastName)", connection1);
+        //    List<SqlParameter> para = new List<SqlParameter>()
+        //        {
+        //            new SqlParameter("@name", SqlDbType.VarChar) {Value = name},
+        //            new SqlParameter("@lastName", SqlDbType.VarChar) {Value = lastName},
+        //        };
+        //    temp.Parameters.AddRange(para.ToArray());
+        //    int WorkerID = (int)temp.ExecuteScalar();
+        //    connection1.Close();
 
-            return WorkerID;
-        }
+        //    return WorkerID;
+        //}
 
         private static int Count(string table)
         {
