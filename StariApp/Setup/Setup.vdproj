@@ -81,6 +81,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_3BBDDEE26256421DBF554CA4D05A3766"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_3D247407DC2146FF95CEEC17288195B6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -267,6 +273,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_A497D8033FF843BC8C6DC65EBCA5827E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A50BD9B22BED418C8B436327380E602B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -358,6 +370,12 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_3BBDDEE26256421DBF554CA4D05A3766"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_A03894F3ABFAB5F8CFE0160E678892A8"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -386,6 +404,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -410,6 +436,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -644,6 +678,37 @@
             {
             "SourcePath" = "8:..\\StariApp\\StariAppDB_log.ldf"
             "TargetName" = "8:StariAppDB_log.ldf"
+            "Tag" = "8:"
+            "Folder" = "8:_67B2B0C8C2634195A9B60541D959E683"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3BBDDEE26256421DBF554CA4D05A3766"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:StariApp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_3BBDDEE26256421DBF554CA4D05A3766"
+                    {
+                    "Name" = "8:StariApp.exe"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\StariApp\\bin\\Debug\\StariApp.exe"
+            "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_67B2B0C8C2634195A9B60541D959E683"
             "Condition" = "8:"
@@ -1271,6 +1336,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A497D8033FF843BC8C6DC65EBCA5827E"
+            {
+            "SourcePath" = "8:..\\StariApp\\bin\\Debug\\StariApp.pdb"
+            "TargetName" = "8:StariApp.pdb"
+            "Tag" = "8:"
+            "Folder" = "8:_67B2B0C8C2634195A9B60541D959E683"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A50BD9B22BED418C8B436327380E602B"
             {
             "SourcePath" = "8:..\\StariApp\\StariAppDBDataSet4.xss"
@@ -1739,6 +1824,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_1E54A890CA1541AB92CD32C59D69864C"
+            {
+            "Name" = "8:StariApp.exe"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_3BBDDEE26256421DBF554CA4D05A3766"
+            "Folder" = "8:_72E61C13F6B34C239853AE904B4D615F"
+            "WorkingFolder" = "8:_67B2B0C8C2634195A9B60541D959E683"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A34B630C5AEB4F6CB9C5E5C291BE077A"
             {
             "Name" = "8:StariApp"
@@ -1753,7 +1852,7 @@
             "Icon" = "8:"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_DBDCCCA139AE4362A11C56F5D4590833"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_BFD0BF5C2F87437E8C84A170798FF4A5"
             {
             "Name" = "8:StariApp"
             "Arguments" = "8:"
@@ -1761,9 +1860,9 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_A4753BE78D614FFD931A7F15396E5F1B"
+            "Target" = "8:_3BBDDEE26256421DBF554CA4D05A3766"
             "Folder" = "8:_748FB94B157A40358A8A25AC155F57B2"
-            "WorkingFolder" = "8:"
+            "WorkingFolder" = "8:_67B2B0C8C2634195A9B60541D959E683"
             "Icon" = "8:"
             "Feature" = "8:"
             }
