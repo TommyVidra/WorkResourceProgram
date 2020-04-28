@@ -33,4 +33,3 @@ E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\obj\Debug\StariApp.Pro
 E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\obj\Debug\StariApp.csproj.GenerateResource.cache
 E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\obj\Debug\StariApp.exe
 E:\Projects\Završeni Projekti\StariApp\StariApp\StariApp\obj\Debug\StariApp.pdb
-E:\Projects\StariApp\StariApp\StariApp\obj\Debug\StariApp.csprojAssemblyReference.cache
