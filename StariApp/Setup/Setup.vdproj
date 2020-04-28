@@ -123,12 +123,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_5BADE5990AB8F9A4E79AB4B550D39688"
-        "OwnerKey" = "8:_A4753BE78D614FFD931A7F15396E5F1B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_5D73913BCDF140CEAC0FCD259D38D2AA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -243,6 +237,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_A03894F3ABFAB5F8CFE0160E678892A8"
+        "OwnerKey" = "8:_A4753BE78D614FFD931A7F15396E5F1B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A15D2F1F714D4A51959F9EF249198E96"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -352,13 +352,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5BADE5990AB8F9A4E79AB4B550D39688"
+        "OwnerKey" = "8:_A4753BE78D614FFD931A7F15396E5F1B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A4753BE78D614FFD931A7F15396E5F1B"
+        "OwnerKey" = "8:_A03894F3ABFAB5F8CFE0160E678892A8"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -379,6 +379,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -395,6 +403,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -784,37 +800,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5BADE5990AB8F9A4E79AB4B550D39688"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-                "ScatterAssemblies"
-                {
-                    "_5BADE5990AB8F9A4E79AB4B550D39688"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Net.Http.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_67B2B0C8C2634195A9B60541D959E683"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5D73913BCDF140CEAC0FCD259D38D2AA"
             {
             "SourcePath" = "8:..\\StariApp\\StariAppDBDataSet10.xsc"
@@ -1193,6 +1178,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A03894F3ABFAB5F8CFE0160E678892A8"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+                "ScatterAssemblies"
+                {
+                    "_A03894F3ABFAB5F8CFE0160E678892A8"
+                    {
+                    "Name" = "8:System.Net.Http.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Net.Http.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_67B2B0C8C2634195A9B60541D959E683"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A15D2F1F714D4A51959F9EF249198E96"
@@ -1725,7 +1741,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A34B630C5AEB4F6CB9C5E5C291BE077A"
             {
-            "Name" = "8:App installer"
+            "Name" = "8:StariApp"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -1739,7 +1755,7 @@
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_DBDCCCA139AE4362A11C56F5D4590833"
             {
-            "Name" = "8:App installer"
+            "Name" = "8:StariApp"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
