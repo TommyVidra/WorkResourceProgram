@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,44 +17,47 @@ namespace StariApp
         [STAThread]
         static void Main()
         {
-            SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Projects\\StariApp\\StariApp\\StariApp\\StariAppDB.mdf;Integrated Security=True");
-            SqlCommand command = new SqlCommand();
-            SqlDataReader reader = null;
-            try
-            {
-                // 2. Open the connection
-                connection.Open();
+            //string wanted_path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+            //Console.WriteLine(wanted_path);
 
-                // 3. Pass the connection to a command object
-                SqlCommand cmd = new SqlCommand("select * from Resource", connection);
+            //SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + wanted_path + "\\StariAppDB.mdf;Integrated Security=True");
+            //SqlCommand command = new SqlCommand();
+            //SqlDataReader reader = null;
+            //try
+            //{
+            //    // 2. Open the connection
+            //    connection.Open();
 
-                //
-                // 4. Use the connection
-                //
+            //    // 3. Pass the connection to a command object
+            //    SqlCommand cmd = new SqlCommand("select * from Resource", connection);
 
-                // get query results
-                reader = cmd.ExecuteReader();
+            //    //
+            //    // 4. Use the connection
+            //    //
 
-                // print the CustomerID of each record
-                while (reader.Read())
-                {
-                    Console.WriteLine(reader[1]);
-                }
-            }
-            finally
-            {
-                // close the reader
-                if (reader != null)
-                {
-                    reader.Close();
-                }
+            //    // get query results
+            //    reader = cmd.ExecuteReader();
 
-                // 5. Close the connection
-                if (connection != null)
-                {
-                    connection.Close();
-                }
-            }
+            //    // print the CustomerID of each record
+            //    while (reader.Read())
+            //    {
+            //        Console.WriteLine(reader[1]);
+            //    }
+            //}
+            //finally
+            //{
+            //    // close the reader
+            //    if (reader != null)
+            //    {
+            //        reader.Close();
+            //    }
+
+            //    // 5. Close the connection
+            //    if (connection != null)
+            //    {
+            //        connection.Close();
+            //    }
+            //}
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
