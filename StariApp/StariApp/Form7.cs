@@ -86,8 +86,8 @@ namespace StariApp
 
         private void DisplayDataStock()
         {
-            string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True"); 
+
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + Connection.path + "\\StariAppDB.mdf;Integrated Security=True"); 
             con.Open();
             SqlDataAdapter adapt;
             DataTable dt = new DataTable();
@@ -111,8 +111,8 @@ namespace StariApp
 
         private void DisplayDataStatusUsed()
         {
-            string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
+
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + Connection.path + "\\StariAppDB.mdf;Integrated Security=True");
             con.Open();
             SqlDataAdapter adapt;
             DataTable dt = new DataTable();

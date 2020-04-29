@@ -12,9 +12,10 @@ namespace StariApp
     class Connection
     {
 
+        public static string path = Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory());
+
         public static void addWorker(string name, string lastName, int position)
         {
-            string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
             int count = workerCount(name, lastName);
 
             //if a worker doesnt exist
@@ -43,7 +44,6 @@ namespace StariApp
 
         public static void removeWorker(string name, string lastName)
         {
-            string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
             int count = workerCount(name, lastName);
 
             if (count != 0)
@@ -71,7 +71,7 @@ namespace StariApp
 
         private static int workerCount(string name, string lastName)
         {
-            string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+
             SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
             SqlCommand command = new SqlCommand("select Count(*) from Workers where lower(Name) = lower(@userName) and lower(LastName) = lower(@userLast)", connection);
             connection.Open();
@@ -90,7 +90,7 @@ namespace StariApp
 
         public static void addResource(string name, float price, float mass, string metric)
         {
-            string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+
             int count = resourceCount(name, price, metric);
 
             //if a worker doesnt exist
@@ -120,7 +120,7 @@ namespace StariApp
 
         public static void removeResource(string name, float price, string metric)
         {
-            string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+
             int count = resourceCount(name, price, metric);
 
             if (count != 0)
@@ -149,7 +149,7 @@ namespace StariApp
 
         private static int resourceCount(string name, float price, string metric)
         {
-            string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+
             SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
             SqlCommand command = new SqlCommand("select Count(*) from Resource where lower(Name) = lower(@name) and Price = @price and lower(Metric) = lower(@metric) ", connection);
             connection.Open();
@@ -169,7 +169,7 @@ namespace StariApp
 
         public static void addNote(string note, DateTime date, int workerId)
         {
-            string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+
             int id = Count("Note"); ++id;
 
             SqlConnection connection2 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
@@ -209,7 +209,7 @@ namespace StariApp
 
         private static int Count(string table)
         {
-            string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+
             SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
             SqlCommand command = new SqlCommand("select count(*) from " + table, connection);
             connection.Open();
@@ -233,7 +233,7 @@ namespace StariApp
 
         public static void addPosition(string position)
         {
-            string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+
             SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
             SqlCommand command = new SqlCommand("select Count(*) from Position where lower(Position) = lower(@position)", connection);
             connection.Open();
@@ -272,7 +272,7 @@ namespace StariApp
 
         public static void removeById(int Id, string table)
         {
-            string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+
             SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
             connection.Open();
 
@@ -291,7 +291,7 @@ namespace StariApp
 
         public static void removeByIdMultiple(string ids, string table)
         {
-            string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+
             SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
             connection.Open();
 
@@ -316,7 +316,7 @@ namespace StariApp
 
         public static void addStock(DateTime date, int resource, float amount)
         {
-            string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+
             int id = Count("Stock"); ++id;
 
             SqlConnection connection1 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
@@ -350,7 +350,7 @@ namespace StariApp
         public static void addWork(DateTime date, string ids, float duration)
         {
 
-            string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+
             SqlConnection connection2 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
             connection2.Open();
 

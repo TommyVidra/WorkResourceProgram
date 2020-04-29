@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StariApp", "StariApp\StariApp.csproj", "{4BED0EDA-00E3-452F-A507-3AFA72E280B9}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{40AF5C49-D2C2-4C62-8C80-63B3DC4C7C23}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{2A8829ED-CDB7-40EC-B1B7-D07596A1D5A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{4BED0EDA-00E3-452F-A507-3AFA72E280B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BED0EDA-00E3-452F-A507-3AFA72E280B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BED0EDA-00E3-452F-A507-3AFA72E280B9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{40AF5C49-D2C2-4C62-8C80-63B3DC4C7C23}.Debug|Any CPU.ActiveCfg = Debug
-		{40AF5C49-D2C2-4C62-8C80-63B3DC4C7C23}.Release|Any CPU.ActiveCfg = Release
+		{2A8829ED-CDB7-40EC-B1B7-D07596A1D5A2}.Debug|Any CPU.ActiveCfg = Debug
+		{2A8829ED-CDB7-40EC-B1B7-D07596A1D5A2}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
