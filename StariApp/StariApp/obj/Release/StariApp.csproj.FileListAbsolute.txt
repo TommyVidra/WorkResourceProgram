@@ -15,3 +15,4 @@ E:\Projects\StariApp\StariApp\StariApp\obj\Release\StariApp.Properties.Resources
 E:\Projects\StariApp\StariApp\StariApp\obj\Release\StariApp.csproj.GenerateResource.cache
 E:\Projects\StariApp\StariApp\StariApp\obj\Release\StariApp.exe
 E:\Projects\StariApp\StariApp\StariApp\obj\Release\StariApp.pdb
+E:\Projects\StariApp\StariApp\StariApp\obj\Release\StariApp.csprojAssemblyReference.cache
