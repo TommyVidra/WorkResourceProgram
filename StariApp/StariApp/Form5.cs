@@ -59,7 +59,7 @@ namespace StariApp
         private void DisplayData()
         {
 
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + Connection.path + "\\StariAppDB.mdf;Integrated Security=True"); 
+            SqlConnection con = new SqlConnection(Connection.path); 
             con.Open();
             SqlDataAdapter adapt;
             DataTable dt = new DataTable();

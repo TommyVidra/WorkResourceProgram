@@ -87,7 +87,7 @@ namespace StariApp
         private void DisplayDataStock()
         {
 
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + Connection.path + "\\StariAppDB.mdf;Integrated Security=True"); 
+            SqlConnection con = new SqlConnection(Connection.path); 
             con.Open();
             SqlDataAdapter adapt;
             DataTable dt = new DataTable();
@@ -112,7 +112,7 @@ namespace StariApp
         private void DisplayDataStatusUsed()
         {
 
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + Connection.path + "\\StariAppDB.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection(Connection.path);
             con.Open();
             SqlDataAdapter adapt;
             DataTable dt = new DataTable();

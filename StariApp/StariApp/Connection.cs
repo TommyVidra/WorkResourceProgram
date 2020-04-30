@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
@@ -12,8 +13,8 @@ namespace StariApp
     class Connection
     {
 
-        public static string path = Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory());
-
+        //public static string path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "\\IVT";
+        public static string path = ConfigurationManager.ConnectionStrings["StariApp.Properties.Settings.StariAppDBConnectionString"].ConnectionString;
         public static void addWorker(string name, string lastName, int position)
         {
             int count = workerCount(name, lastName);
@@ -23,7 +24,8 @@ namespace StariApp
             {
                 int id = Count("Workers"); ++id;
 
-                SqlConnection connection2 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
+                //SqlConnection connection2 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
+                SqlConnection connection2 = new SqlConnection(path);
                 connection2.Open();
                 SqlCommand insert = new SqlCommand("INSERT INTO Workers (Id, Name, LastName, Position)  VALUES(@id, @name, @lastName, @position)", connection2);
 
@@ -48,7 +50,7 @@ namespace StariApp
 
             if (count != 0)
             {
-                SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
+                SqlConnection connection = new SqlConnection(path);
                 connection.Open();
 
                 SqlCommand delete = new SqlCommand("delete from Workers where lower(Name) = lower(@userName) and lower(LastName) = lower(@userLast)", connection);
@@ -72,7 +74,7 @@ namespace StariApp
         private static int workerCount(string name, string lastName)
         {
 
-            SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(path);
             SqlCommand command = new SqlCommand("select Count(*) from Workers where lower(Name) = lower(@userName) and lower(LastName) = lower(@userLast)", connection);
             connection.Open();
 
@@ -98,7 +100,7 @@ namespace StariApp
             {
                 int id = Count("Resource"); ++id;
 
-                SqlConnection connection2 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
+                SqlConnection connection2 = new SqlConnection(path);
                 connection2.Open();
                 SqlCommand insert = new SqlCommand("INSERT INTO Resource (Id, Name, Price, Mass, Metric)  VALUES(@id, @name, @price, @mass, @metric)", connection2);
 
@@ -125,7 +127,7 @@ namespace StariApp
 
             if (count != 0)
             {
-                SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
+                SqlConnection connection = new SqlConnection(path);
                 connection.Open();
 
                 SqlCommand delete = new SqlCommand("delete from Resource where lower(Name) = lower(@name) and Price = price and lower(Metric) = lower(@metric)", connection);
@@ -150,7 +152,7 @@ namespace StariApp
         private static int resourceCount(string name, float price, string metric)
         {
 
-            SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(path);
             SqlCommand command = new SqlCommand("select Count(*) from Resource where lower(Name) = lower(@name) and Price = @price and lower(Metric) = lower(@metric) ", connection);
             connection.Open();
 
@@ -172,7 +174,7 @@ namespace StariApp
 
             int id = Count("Note"); ++id;
 
-            SqlConnection connection2 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
+            SqlConnection connection2 = new SqlConnection(path);
             connection2.Open();
 
             SqlCommand insert = new SqlCommand("INSERT INTO Note (Date, Note, Worker, Id)  VALUES( @date, @note, @workerId, @id)", connection2);
@@ -210,7 +212,7 @@ namespace StariApp
         private static int Count(string table)
         {
 
-            SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(path);
             SqlCommand command = new SqlCommand("select count(*) from " + table, connection);
             connection.Open();
 
@@ -234,7 +236,7 @@ namespace StariApp
         public static void addPosition(string position)
         {
 
-            SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(path);
             SqlCommand command = new SqlCommand("select Count(*) from Position where lower(Position) = lower(@position)", connection);
             connection.Open();
 
@@ -252,7 +254,7 @@ namespace StariApp
             {
                 int id = Count("Position"); ++id;
 
-                SqlConnection connection2 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
+                SqlConnection connection2 = new SqlConnection(path);
                 connection2.Open();
 
                 SqlCommand insert = new SqlCommand("INSERT INTO Position (Id, Position)  VALUES(@id, @position)", connection2);
@@ -273,7 +275,7 @@ namespace StariApp
         public static void removeById(int Id, string table)
         {
 
-            SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(path);
             connection.Open();
 
             SqlCommand delete = new SqlCommand("delete from " + table + "  where Id = @id", connection);
@@ -292,7 +294,7 @@ namespace StariApp
         public static void removeByIdMultiple(string ids, string table)
         {
 
-            SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(path);
             connection.Open();
 
             foreach (string s in ids.Split())
@@ -319,7 +321,7 @@ namespace StariApp
 
             int id = Count("Stock"); ++id;
 
-            SqlConnection connection1 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
+            SqlConnection connection1 = new SqlConnection(path);
             connection1.Open();
 
             //SqlCommand temp = new SqlCommand("select Id from Resource where lower(Name) = lower(@name)", connection1);
@@ -351,7 +353,7 @@ namespace StariApp
         {
 
 
-            SqlConnection connection2 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + path + "\\StariAppDB.mdf;Integrated Security=True");
+            SqlConnection connection2 = new SqlConnection(path);
             connection2.Open();
 
             foreach(string s in ids.Split())
