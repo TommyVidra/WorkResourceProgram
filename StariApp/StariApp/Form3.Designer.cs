@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -41,24 +40,20 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.stariAppDBDataSet13 = new StariApp.StariAppDBDataSet13();
+            this.resourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.resourceTableAdapter = new StariApp.StariAppDBDataSet13TableAdapters.ResourceTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.massDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metricDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.resourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stariAppDBDataSet = new StariApp.StariAppDBDataSet();
-            this.resourceTableAdapter = new StariApp.StariAppDBDataSetTableAdapters.ResourceTableAdapter();
-            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.resourceBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stariAppDBDataSet)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stariAppDBDataSet13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resourceBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // textBox1
             // 
@@ -174,6 +169,7 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn,
             this.massDataGridViewTextBoxColumn,
@@ -183,6 +179,45 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(446, 427);
             this.dataGridView1.TabIndex = 12;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(246, 451);
+            this.panel1.TabIndex = 14;
+            // 
+            // stariAppDBDataSet13
+            // 
+            this.stariAppDBDataSet13.DataSetName = "StariAppDBDataSet13";
+            this.stariAppDBDataSet13.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // resourceBindingSource
+            // 
+            this.resourceBindingSource.DataMember = "Resource";
+            this.resourceBindingSource.DataSource = this.stariAppDBDataSet13;
+            // 
+            // resourceTableAdapter
+            // 
+            this.resourceTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -208,39 +243,6 @@
             this.metricDataGridViewTextBoxColumn.HeaderText = "Metric";
             this.metricDataGridViewTextBoxColumn.Name = "metricDataGridViewTextBoxColumn";
             // 
-            // resourceBindingSource
-            // 
-            this.resourceBindingSource.DataMember = "Resource";
-            this.resourceBindingSource.DataSource = this.stariAppDBDataSet;
-            // 
-            // stariAppDBDataSet
-            // 
-            this.stariAppDBDataSet.DataSetName = "StariAppDBDataSet";
-            this.stariAppDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // resourceTableAdapter
-            // 
-            this.resourceTableAdapter.ClearBeforeFill = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Teal;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(246, 451);
-            this.panel1.TabIndex = 14;
-            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,17 +255,15 @@
             this.Text = "Resursi";
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.resourceBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stariAppDBDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stariAppDBDataSet13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resourceBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
@@ -275,13 +275,14 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private StariAppDBDataSet stariAppDBDataSet;
+        private System.Windows.Forms.Panel panel1;
+        private StariAppDBDataSet13 stariAppDBDataSet13;
         private System.Windows.Forms.BindingSource resourceBindingSource;
-        private StariAppDBDataSetTableAdapters.ResourceTableAdapter resourceTableAdapter;
+        private StariAppDBDataSet13TableAdapters.ResourceTableAdapter resourceTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn massDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn metricDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -27,8 +27,10 @@ namespace StariApp
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            DisplayData();
+            // TODO: This line of code loads data into the 'stariAppDBDataSet13.Resource' table. You can move, or remove it, as needed.
+            //this.resourceTableAdapter.Fill(this.stariAppDBDataSet13.Resource);
             // TODO: This line of code loads data into the 'stariAppDBDataSet.Resource' table. You can move, or remove it, as needed.
-            this.resourceTableAdapter.Fill(this.stariAppDBDataSet.Resource);
 
         }
 
@@ -83,7 +85,7 @@ namespace StariApp
             con.Open();
             SqlDataAdapter adapt;
             DataTable dt = new DataTable();
-            adapt = new SqlDataAdapter("select Name, Price, Mass, Metric from Resource", con);
+            adapt = new SqlDataAdapter("select Id, Name, Price, Mass, Metric from Resource", con);
             adapt.Fill(dt);
             dataGridView1.DataSource = dt;
             con.Close();

@@ -27,12 +27,14 @@ namespace StariApp
         private void Form6_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'stariAppDBDataSet10.WorkersView' table. You can move, or remove it, as needed.
-            this.workersViewTableAdapter.Fill(this.stariAppDBDataSet10.WorkersView);
+            //this.workersViewTableAdapter.Fill(this.stariAppDBDataSet10.WorkersView);
             // TODO: This line of code loads data into the 'stariAppDBDataSet9.WorkView' table. You can move, or remove it, as needed.
-            this.workViewTableAdapter.Fill(this.stariAppDBDataSet9.WorkView);
+            //this.workViewTableAdapter.Fill(this.stariAppDBDataSet9.WorkView);
             // TODO: This line of code loads data into the 'stariAppDBDataSet8.WorkView' table. You can move, or remove it, as needed.
             //this.workViewTableAdapter.Fill(this.stariAppDBDataSet8.WorkView);
             DisplayData();
+            DisplayDataForWorker();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -81,6 +83,18 @@ namespace StariApp
             adapt = new SqlDataAdapter("select * from WorkView", con);
             adapt.Fill(dt);
             dataGridView1.DataSource = dt;
+            con.Close();
+        }
+        private void DisplayDataForWorker()
+        {
+
+            SqlConnection con = new SqlConnection(Connection.path);
+            con.Open();
+            SqlDataAdapter adapt1;
+            DataTable dt1 = new DataTable();
+            adapt1 = new SqlDataAdapter("select sum(Duration) as 'Trajanje u h', Worker as 'Worker Id' from Work group by Worker ", con);
+            adapt1.Fill(dt1);
+            dataGridView2.DataSource = dt1;
             con.Close();
         }
 
